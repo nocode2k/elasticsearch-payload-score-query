@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.elasticsearch.gradle:build-tools:7.15.1"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'elasticsearch.esplugin'
+
+esplugin {
+    name 'payload-score'
+    description 'Elasticsearch Custom Payload Score plugin'
+    classname 'nocode.elasticsearch.plugin.CustomPayloadScore'
+}
+
+group = 'nocode'
+version = '0.1'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.elasticsearch', name: 'elasticsearch', version: '7.15.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}

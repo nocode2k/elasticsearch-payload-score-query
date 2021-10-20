@@ -1,1 +1,1 @@
-# elasticsearch-payload-score
+# elasticsearch-payload-score-query

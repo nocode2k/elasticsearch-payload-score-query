@@ -15,7 +15,7 @@ import org.elasticsearch.index.query.*;
 import java.io.IOException;
 import java.util.Objects;
 
-public class CustomPayloadScoreBuilder extends AbstractQueryBuilder<CustomPayloadScoreBuilder> {
+public class CustomPayloadScoreQueryBuilder extends AbstractQueryBuilder<CustomPayloadScoreQueryBuilder> {
 
     public static final String NAME = "payload_score";
 
@@ -29,14 +29,14 @@ public class CustomPayloadScoreBuilder extends AbstractQueryBuilder<CustomPayloa
     private final String calc;
     private final boolean includeSpanScore;
 
-    public CustomPayloadScoreBuilder(QueryBuilder query, String func, String calc, boolean includeSpanScore) {
+    public CustomPayloadScoreQueryBuilder(QueryBuilder query, String func, String calc, boolean includeSpanScore) {
         this.query = requireValue(query, "[" + NAME + "] requires '" + QUERY_FIELD.getPreferredName() + "' field");
         this.func = func;
         this.calc = calc;
         this.includeSpanScore = includeSpanScore;
     }
 
-    public CustomPayloadScoreBuilder(StreamInput in) throws IOException {
+    public CustomPayloadScoreQueryBuilder(StreamInput in) throws IOException {
         super(in);
         this.query = in.readNamedWriteable(QueryBuilder.class);
         this.func = in.readString();
@@ -96,7 +96,7 @@ public class CustomPayloadScoreBuilder extends AbstractQueryBuilder<CustomPayloa
                 }
             }
         }
-        return new CustomPayloadScoreBuilder(iqb, func, calc, includeSpanScore);
+        return new CustomPayloadScoreQueryBuilder(iqb, func, calc, includeSpanScore);
     }
 
     @Override
@@ -123,7 +123,7 @@ public class CustomPayloadScoreBuilder extends AbstractQueryBuilder<CustomPayloa
     }
 
     @Override
-    protected boolean doEquals(CustomPayloadScoreBuilder that) {
+    protected boolean doEquals(CustomPayloadScoreQueryBuilder that) {
         return Objects.equals(query, that.query)
             && Objects.equals(func, that.func)
             && Objects.equals(calc, that.calc)

@@ -338,7 +338,6 @@ protected Query doToQuery(SearchExecutionContext context) throws IOException {
 
 ```
 $ gradle clean build
-$ cp ./build/distributions/payload-score-0.1.zip 
 ```
 
 

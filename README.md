@@ -14,6 +14,13 @@ Elasticsearch 공식 문서: https://www.elastic.co/guide/en/elasticsearch/refer
 T-Shirt  상품의 검색 순위를 높여야 하는 요구사항을 만족하기 위해서 Elasticsearch에서 Plugin개발을 통해서 PayloadScoreQuery 기능을 적용하는 방법을 살펴보도록 하겠습니다. 
 
 
+## 환경
+
+- open jdk 11
+- gradle 7.1
+- elasticsearch 7.15.1
+
+
 
 ## Analyzer 추가：
 

@@ -8,7 +8,7 @@ Lucene이 제공하는 PayloadScoreQuery를 사용하면 Term의 차이를  구�
 
 안타깝게도 Elasticsearch에서는 Delimited payload token filter는 제공하고 있지만 PayloadScoreQuery와 같이 가중치를 계산하고 있지는 않습니다.
 
-Elasticsearch 공식 문서: https://www.elastic.co/guide/en/elasticsearch/reference/7.15/analysis-delimited-payload-tokenfilter.html#analysis-delimited-payload-tokenfilter
+Elasticsearch 공식 문서: https://www.elastic.co/guide/en/elasticsearch/reference/8.5/analysis-delimited-payload-tokenfilter.html#analysis-delimited-payload-tokenfilter
 
 
 T-Shirt  상품의 검색 순위를 높여야 하는 요구사항을 만족하기 위해서 Elasticsearch에서 Plugin개발을 통해서 PayloadScoreQuery 기능을 적용하는 방법을 살펴보도록 하겠습니다. 
@@ -16,9 +16,9 @@ T-Shirt  상품의 검색 순위를 높여야 하는 요구사항을 만족하�
 
 ## 환경
 
-- open jdk 11
-- gradle 7.1
-- elasticsearch 7.15.1
+- open jdk 17
+- gradle 7.4.1
+- elasticsearch 8.5.3
 
 
 

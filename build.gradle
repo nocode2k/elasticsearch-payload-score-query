@@ -18,7 +18,7 @@ apply plugin: 'elasticsearch.esplugin'
 esplugin {
     name 'payload-score'
     description 'Elasticsearch Custom Payload Score plugin'
-    classname 'nocode.elasticsearch.plugin.CustomPayloadScore'
+    classname 'nocode.elasticsearch.plugin.CustomPayloadScoreQueryPlugin'
 }
 
 group = 'nocode'
